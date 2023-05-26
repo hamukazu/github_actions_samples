@@ -11,6 +11,8 @@ jobs:
   echo-version:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v2
       - name: get current date
         id: date
         run: echo "date=$(date +'%Y%m%d')" >$GITHUB_OUTPUT
