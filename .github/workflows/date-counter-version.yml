@@ -24,7 +24,7 @@ jobs:
           LAST_COUNTER=$(echo $LAST_RELEASE|sed 's/.*\.//')
           if [ "$LAST_DATE" = "$DATE" ]
           then
-            echo "counter=$(expr 1 '+' $LAST_COUNTER)" >$GITHUB_OUTPUT
+            echo "counter=$(($LAST_COUNTER +1))" >$GITHUB_OUTPUT
           else
             echo "counter=1" >$GITHUB_OUTPUT
           fi
