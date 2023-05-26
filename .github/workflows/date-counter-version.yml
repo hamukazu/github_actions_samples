@@ -34,4 +34,9 @@ jobs:
       - name: get version
         id: version
         run: |
-          echo ${{ steps.date.outputs.date }}.${{ steps.counter.outputs.counter }}
+          echo "version=${{ steps.date.outputs.date }}.${{ steps.counter.outputs.counter }}" >$GITHUB_OUTPUT
+      - name: echo version
+        run: |
+          echo $VERSION
+        env:
+          VERSION: $${{ steps.version.outputs.version }}
