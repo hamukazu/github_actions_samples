@@ -1,0 +1,16 @@
+name: Show date
+# To check timezone
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  echo-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: date
+        run: |
+          date
