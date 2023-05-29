@@ -19,7 +19,7 @@ jobs:
           echo "date=$(TZ=$TIME_ZONE date +'%Y%m%d')" >$GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
         env:
-          TIME_ZONE:JST-9
+          TIME_ZONE: JST-9
       - name: get counter
         id: counter
         run: |
