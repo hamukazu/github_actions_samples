@@ -13,4 +13,7 @@ jobs:
     steps:
       - name: date
         run: |
-          date
+          echo "date=$(TZ=$TIME_ZONE date +'%Y%m%d%H%M%S')" >$GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
+        env:
+          TIME_ZONE: JST-9
